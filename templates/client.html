@@ -85,11 +85,13 @@
     </table>
     <script>
         var ws = new WebSocket("ws://localhost:8000/ws")
+
         function cellClick(id) {
             console.log(id)
             ws.send("Cell " + id + " was cliked")
         }
         ws.onmessage = function(e) {
+            
             console.log(e)
         }
 
