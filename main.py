@@ -31,6 +31,6 @@ async def websocket_endpoint(websocket: WebSocket):
             # precessing the incomming message
             await update_board(manager, data)
     except WebSocketDisconnect:
-        manager.disconnect(websocket)
-    except:
+        await manager.disconnect(websocket)
+    finally:
         pass
